@@ -6,11 +6,11 @@ services:
             - "80:80"
         volumes:
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-            - ../app:/app
+            - ../../application:/app
     php:
         image: php:8.1.9-fpm-alpine
         volumes:
-            - ../app:/app
+            - ../../application:/app
     mysql:
         image: ${ENGINE_TYPE}:${MYSQL_IMAGE_VERSION}
         environment:
