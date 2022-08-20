@@ -1,1 +1,4 @@
 platform/docker/.env
+
+# exclude all composer vendor folders 
+application/**/vendor
