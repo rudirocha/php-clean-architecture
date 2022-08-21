@@ -56,3 +56,6 @@ Use this instructions to get the project up and running.
 1. run `cp platform/.env-example platform/.env` 
 2. run `docker compose -f platform/docker/compose.yaml up`
 3. to stop and remove the containers `docker compose -f platform/docker/compose.yaml down`
+
+#### Tips for Docker usage
+- PHP extensions management inside the `php` container: `docker-php-ext-install`,  `docker-php-ext-enable`, and  `docker-php-ext-configure`

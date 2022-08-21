@@ -1,0 +1,28 @@
+{
+    "name": "php-clean-architecture/tests",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudi Rocha",
+            "email": "rudi.rocha@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../src/domain"
+        }
+    ],
+    "require": {
+        "php-clean-architecture/domain" : "dev-main"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
