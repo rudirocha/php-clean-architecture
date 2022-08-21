@@ -1,26 +1,25 @@
 # PHP Clean Architecture
 
-### Goal
+### Overview
+Implementing Clean Architecture design, allows the software business logic to be built independentely from it's delivery/exposure, as well as, reducing its own dependencies. By breaking down into several layers, and establishing a comunication flow between them, the application is better set for success when talking about scalability, testability, and maintenance. Clean Architecture was created in 2012 by Robert C. Martin, and this repository suggests one approach using PHP code and tools.
+
+*The Goal* 
 Create an application boilerplate allowing an opinionated approach of a `Clean Architecture` using PHP.
 
-## Getting started
+*Why?*
+When working with C# and .Net, right from the start we're used to segregating the application into multiple layers. The DAL (Data Access Layer) and the BAL (Business Access Layer) are examples of that. The application structure starts to be designed right on the moment an empty `solution` is created followed by the creation of each project with its own defined scope. Each project has also an important configuration step, by defining which compiled outcome is expected to be produced, `.Net Standard 2.*` vs `.Net Core`, so the engineering team can define how generic those `DLL` are meant to be (and how portable between .Net versions they are meant to be).
+One great example of a `Clean Architecture` with `.Net Core` belongs to [Json Taylor](https://github.com/jasontaylordev/CleanArchitecture). In the linked `Github` repository we can find a `.Net Core 6` solution template. The code is organised into several layers, in the chape of `.Net Core` projects, in which the right dependencies flow is established.
 
-Use this instructions to get thr project up and running.
+What about PHP? 
+One key fact: `We are used to create a project using a well known framework, and organise the code inside of it`. Because we rely purely on the framework lifecycle we may end up with:
+- a huge codebase with many duplicated code and dependencies.
+- many violations of code principles.
+- increased `tech debt` if the focus is only on growing the number of features inside the codebase
+- difficulty upgrading external dependencies (packages or framework version), given the business logic is spread in the same main parent folder
+- testing becomes dependent of the used framework.
 
-### Required Software
-
-*When running on Docker*:
-- Docker and Docker Compose
-
-### Using Docker
-
-1. run `cp platform/.env-example platform/.env` 
-2. run `docker compose -f platform/docker/compose.yaml up`
-3. to stop and remove the containers `docker compose -f platform/docker/compose.yaml down`
-
-## Overview
-
-Implementing Clean Architecture design, allows the software business logic to be built independentely from it's delivery/exposure, as well as, reducing its own dependencies. By breaking down into several layers, and establishing a comunication flow between them, the application is better set for success when talking about scalability, testability, and maintenance. Clean Architecture was created in 2012 by Robert C. Martin, and this repository suggests one approach using PHP code and tools.
+What if we could reduce the dependencies between components on a PHP project? Although the latest PHP Frameworks offer great flexibility, modularisation, and version upgrade support, what if we protect the application's business logic in a way that everything external we need to import is detached from our core logic, consumes our core logic, and is hidden from our core logic?
+Let's try to create an approach.
 
 ### Comply with the basic principles
 
@@ -36,3 +35,18 @@ From Http request/response hadling, to model-in-database design, and even the wh
 
 #### Domain
 An abstract layer containing the core objects for the business logic to process. Are part of this layer `entities`, `constants`, `enums`, `exceptions`, etc...
+
+## Getting started with this repo
+
+Use this instructions to get the project up and running.
+
+### Required Software
+
+*When running on Docker*:
+- Docker and Docker Compose
+
+### Using Docker
+
+1. run `cp platform/.env-example platform/.env` 
+2. run `docker compose -f platform/docker/compose.yaml up`
+3. to stop and remove the containers `docker compose -f platform/docker/compose.yaml down`
