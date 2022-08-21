@@ -36,6 +36,12 @@ From Http request/response hadling, to model-in-database design, and even the wh
 #### Domain
 An abstract layer containing the core objects for the business logic to process. Are part of this layer `entities`, `constants`, `enums`, `exceptions`, etc...
 
+Questions while designing this layer:
+- should this project contain the unit tests? Or should it be an independent project?
+    - if this is part of the same project: its easy to manage the new code, but logic is at the same parent folder as tests 
+    - If its separate: how does composer ensure the link between both projects? Will composer require to autoload / update each time a new update happens?
+
+
 ## Getting started with this repo
 
 Use this instructions to get the project up and running.
