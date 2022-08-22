@@ -15,3 +15,14 @@ it('tests setTitle()', function() {
     $this->conference->setTitle('title 2');
     expect($this->conference->getTitle())->toBe($expectedTitle);
 });
+
+it("tests getSlug()", function() {
+    $expectedSlug = 'theSlug';
+    expect($this->conference->getSlug())->toBe($expectedSlug);
+});
+
+it('tests setSlug()', function() {
+    $expectedSlug = 'slug 2';
+    $this->conference->setSlug('slug 2');
+    expect($this->conference->getSlug())->toBe($expectedSlug);
+});
