@@ -1,0 +1,30 @@
+{
+    "name": "php-clean-architecture/tests",
+    "description": "Application layer tests of this Clean Architecture project",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudi Rocha",
+            "email": "rudi.rocha@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../src/application"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "php-clean-architecture/application" : "dev-main"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

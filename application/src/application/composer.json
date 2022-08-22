@@ -1,0 +1,21 @@
+{
+    "name": "php-clean-architecture/application",
+    "description": "Application layer of this Clean Architecture project",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpCleanArchitecture\\Application\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rudi Rocha",
+            "email": "rudi.rocha@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1"
+    }
+}
