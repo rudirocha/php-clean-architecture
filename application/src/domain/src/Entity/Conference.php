@@ -1,4 +1,5 @@
 <?php
+
 namespace PhpCleanArchitecture\Domain\Entity;
 
 /**
@@ -7,31 +8,43 @@ namespace PhpCleanArchitecture\Domain\Entity;
  */
 class Conference
 {
-    private string $title;
+    private string $city;
     private int $month;
     private int $year;
+    private bool $international;
     private string $slug;
 
-    public function __construct(string $title, int $month, int $year, string $slug)
+    public function __construct(string $city, int $month, int $year, string $slug, bool $isInternational = false)
     {
-        $this->title = $title;
+        $this->city = $city;
         $this->month = $month;
         $this->year = $year;
         $this->slug = $slug;
+        $this->international = $isInternational;
     }
 
-    public function getTitle(): string
+    /**
+     * Get Conference's City
+     *
+     * @return string
+     */
+    public function getCity(): string
     {
-        return $this->title;
+        return $this->city;
     }
 
-    public function setTitle(string $value): Conference
+    public function setCity(string $value): Conference
     {
-        $this->title = $value;
+        $this->city = $value;
 
         return $this;
     }
 
+    /**
+     * Get Conference's Month
+     *
+     * @return integer
+     */
     public function getMonth(): int
     {
         return $this->month;
@@ -48,6 +61,11 @@ class Conference
         return $this;
     }
 
+    /**
+     * Get Conference's year
+     *
+     * @return integer
+     */
     public function getYear(): int
     {
         return $this->year;
@@ -55,23 +73,45 @@ class Conference
 
     public function setYear(int $value): Conference
     {
-        if ($value < 1960) {
-            throw new \InvalidArgumentException("Invalid year [$value]. Value must be greater than 1959.");
+        if ($value > 9999) {
+            throw new \InvalidArgumentException("Invalid year [$value]. Value must be less than 9999.");
         }
-        
-        $this->month = $value;
+
+        $this->year = $value;
 
         return $this;
     }
 
-    public function getSlug() : string
+    /**
+     * Conference Slug
+     *
+     * @return string
+     */
+    public function getSlug(): string
     {
         return $this->slug;
     }
 
-    public function setSlug(string $value) : Conference
+    public function setSlug(string $value): Conference
     {
         $this->slug = $value;
+
+        return $this;
+    }
+
+    /**
+     * This is international or a local conference
+     *
+     * @return boolean
+     */
+    public function isInternational(): bool
+    {
+        return $this->international;
+    }
+
+    public function setInternational(bool $value): Conference
+    {
+        $this->international = $value;
 
         return $this;
     }
