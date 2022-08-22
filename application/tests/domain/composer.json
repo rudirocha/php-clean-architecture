@@ -15,6 +15,7 @@
         }
     ],
     "require": {
+        "php": ">=8.1",
         "php-clean-architecture/domain" : "dev-main"
     },
     "require-dev": {

@@ -59,13 +59,14 @@ Use this instructions to get the project up and running.
 
 #### Tips for Docker usage
 - PHP extensions management inside the `php` container: `docker-php-ext-install`,  `docker-php-ext-enable`, and  `docker-php-ext-configure`
+- Run `composer install` from the host `docker run --rm -it -v "$(pwd):/app" composer/composer install --working-dir=<TARGET DIR TO RUN INSTALLER>`
 
 ## Backlog
-[] - Implement Domain and Application Layer + documentation
-[] - Implement Domain and Application Layer Tests :: as part of the same folder in `src` or under tests? >> Document it
-    [] - When under `tests` which version should be defined: `dev-main` vs `x.y.z`
-[] - Implement Web / Presentation Layer + documentation
-[] - Implement Persistance layer + documentation
-[] - Add Test coverage reports
-[] - Document Platform folder >> Why including it
-[] - Add k8s
+- [ ] Implement Domain and Application Layer + documentation
+- [ ] Implement Domain and Application Layer Tests :: as part of the same folder in `src` or under tests? >> Document it
+    - [ ] When under `tests` which version should be defined: `dev-main` vs `x.y.z`
+- [ ] Implement Web / Presentation Layer + documentation
+- [ ] Implement Persistance layer + documentation
+- [ ] Add Test coverage reports
+- [ ] Document Platform folder >> Why including it
+- [ ] Add k8s
