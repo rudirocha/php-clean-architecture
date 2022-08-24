@@ -70,3 +70,8 @@ Use this instructions to get the project up and running.
 - [ ] Add Test coverage reports
 - [ ] Document Platform folder >> Why including it
 - [ ] Add k8s
+
+## references
+- [NorthwindTraders slides](https://github.com/jasontaylordev/NorthwindTraders/blob/master/Docs/Slides.pdf)
+- [jasontaylordev/CleanArchitecture@github](https://github.com/jasontaylordev/CleanArchitecture)
+- [Setting up a modern PHP environment with Docker](https://www.sitepoint.com/docker-php-development-environment/)
