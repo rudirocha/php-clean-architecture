@@ -36,8 +36,13 @@ As explained at `Uncle Bob` blog post:
 An abstract layer containing the core objects for the business logic to process. Are part of this layer `entities`, `constants`, `enums`, `exceptions`, etc...
 
 #### Application
+This layer will contain the business logic code to process my application's logic.
+It's framework independent, and only knows my Domain layer
 
 #### Web
+This is the main point of contact for the client's requests.
+Here one or multiple interfaces will provide the request and response interface 
+
 The framework should be used as a tool, instead of the main driver. 
 This is an important topic when designing an application implementing Clean Architecture using PHP. As the current state of the art regarding PHP is that frameworks (such as Symfony, Laravel, etc...) are adapting (very well) to become fully flexible to the application type an engineering team needs, the dev community is increasingly relying on this "all-in-one" project solutions. As an outcome, the engineering team is trying to fit the busines logic inside the framework lifecycle.
 From Http request/response hadling, to model-in-database design, and even the whole testing suite are examples on how well the current frameworks allow us to deliver great software, but what if the subject under development is not a micro service but a medium size API?

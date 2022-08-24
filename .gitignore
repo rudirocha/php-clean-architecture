@@ -6,7 +6,7 @@
 platform/docker/.env
 
 # exclude all composer vendor folders 
-application/**/vendor
+software/**/vendor
 
 # exclude phpunit files
-application/**/.phpunit.result.cache
+software/**/.phpunit.result.cache
