@@ -16,30 +16,34 @@ One key fact: `We are used to create a project using a well known framework, and
 - many violations of code principles.
 - increased `tech debt` if the focus is only on growing the number of features inside the codebase
 - difficulty upgrading external dependencies (packages or framework version), given the business logic is spread in the same main parent folder
-- testing becomes dependent of the used framework.
+- testing becomes dependent of the used framework (and eventually is neglected).
 
 What if we could reduce the dependencies between components on a PHP project? Although the latest PHP Frameworks offer great flexibility, modularisation, and version upgrade support, what if we protect the application's business logic in a way that everything external we need to import is detached from our core logic, consumes our core logic, and is hidden from our core logic?
-Let's try to create an approach.
+Let's try to create an approach to Clean Architecture, using PHP.
 
 ### Comply with the basic principles
+As explained at `Uncle Bob` blog post:
 
-- *Independent of external dependencies*
-- *Independent of UI*: Any presentation layers, either by creating or updating actions, shouldn't create any impact to the application business logic. Using any embeded SPA, server-side template engine, should allow the business logic to work as always, and only this specific component to change.
-- *Independent of database types*: What ever is the selected storage type, the application logic shouldn't be impacted.
-- *Independent of frameworks*: The framework should be used as a tool, instead of the main driver. 
-This is an important topic when designing an application implementing Clean Architecture using PHP. As the current state of the art regarding PHP is that frameworks (such as Symfony, Laravel, etc...) are adapting (very well) to become fully flexible to the application type an engineering team needs, the dev community is increasingly relying on this "all-in-one" project solutions. As an outcome, the engineering team is trying to fit the busines logic inside the framework lifecycle.
-From Http request/response hadling, to model-in-database design, and even the whole testing suite are examples on how well the current frameworks allow us to deliver great software, but what if the subject under development is not a micro service but a medium size API?
-- *Testable*: Right from the core layers must be tested even without any database dependencies, UI or other external components
+1. Independent of Frameworks. The architecture does not depend on the existence of some library of feature laden software. This allows you to use such frameworks as tools, rather than having to cram your system into their limited constraints.
+2. Testable. The business rules can be tested without the UI, Database, Web Server, or any other external element.
+3. Independent of UI. The UI can change easily, without changing the rest of the system. A Web UI could be replaced with a console UI, for example, without changing the business rules.
+4. Independent of Database. You can swap out Oracle or SQL Server, for Mongo, BigTable, CouchDB, or something else. Your business rules are not bound to the database.
+5. Independent of any external agency. In fact your business rules simply don’t know anything at all about the outside world.
 
 ### The layers
 
 #### Domain
 An abstract layer containing the core objects for the business logic to process. Are part of this layer `entities`, `constants`, `enums`, `exceptions`, etc...
 
-Questions while designing this layer:
-- should this project contain the unit tests? Or should it be an independent project?
-    - if this is part of the same project: its easy to manage the new code, but logic is at the same parent folder as tests 
-    - If its separate: how does composer ensure the link between both projects? Will composer require to autoload / update each time a new update happens?
+#### Application
+
+#### Web
+The framework should be used as a tool, instead of the main driver. 
+This is an important topic when designing an application implementing Clean Architecture using PHP. As the current state of the art regarding PHP is that frameworks (such as Symfony, Laravel, etc...) are adapting (very well) to become fully flexible to the application type an engineering team needs, the dev community is increasingly relying on this "all-in-one" project solutions. As an outcome, the engineering team is trying to fit the busines logic inside the framework lifecycle.
+From Http request/response hadling, to model-in-database design, and even the whole testing suite are examples on how well the current frameworks allow us to deliver great software, but what if the subject under development is not a micro service but a medium size API?
+#### External
+
+#### Storage
 
 
 ## Getting started with this repo
@@ -75,3 +79,4 @@ Use this instructions to get the project up and running.
 - [NorthwindTraders slides](https://github.com/jasontaylordev/NorthwindTraders/blob/master/Docs/Slides.pdf)
 - [jasontaylordev/CleanArchitecture@github](https://github.com/jasontaylordev/CleanArchitecture)
 - [Setting up a modern PHP environment with Docker](https://www.sitepoint.com/docker-php-development-environment/)
+- [The Clean Architecture blog post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
