@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "328ce3045c1a3224f7af12a59c101655",
+    "content-hash": "3a24a6b9b93e59e45727d3d70d92ef0a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1692,6 +1692,37 @@
                 }
             ],
             "time": "2022-07-24T11:55:47+00:00"
+        },
+        {
+            "name": "php-clean-architecture/application",
+            "version": "1",
+            "dist": {
+                "type": "path",
+                "url": "../application",
+                "reference": "c18df298fc69126769c96a3a9c571747984b6d94"
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCleanArchitecture\\Application\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rudi Rocha",
+                    "email": "rudi.rocha@gmail.com"
+                }
+            ],
+            "description": "Application layer of this Clean Architecture project",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "phpdocumentor/reflection-common",
