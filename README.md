@@ -68,6 +68,8 @@ Use this instructions to get the project up and running.
 
 #### Tips for Docker usage
 - PHP extensions management inside the `php` container: `docker-php-ext-install`,  `docker-php-ext-enable`, and  `docker-php-ext-configure`
+    - extensions installed during this case study:
+        - `docker-php-ext-install pdo_mysql`
 - Run `composer install` from the host `docker run --rm -it -v "$(pwd):/app" composer/composer install --working-dir=<TARGET DIR TO RUN INSTALLER>`
 
 ## Backlog

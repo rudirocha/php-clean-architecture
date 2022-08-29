@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
         "php-clean-architecture/application": "^1.0",
+        "php-clean-architecture/domain": "^1.0",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.7",
         "sensio/framework-extra-bundle": "^6.1",
@@ -110,6 +111,10 @@
         {
             "type": "path",
             "url": "../application"
+        },
+        {
+            "type": "path",
+            "url": "../domain"
         }
     ]
 }

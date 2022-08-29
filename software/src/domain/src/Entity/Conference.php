@@ -2,25 +2,32 @@
 
 namespace PhpCleanArchitecture\Domain\Entity;
 
+use PhpCleanArchitecture\Domain\Entity\Conference as EntityConference;
+
 /**
  * PHP version: 8.1
  *
  */
 class Conference
 {
-    private string $city;
-    private int $month;
-    private int $year;
-    private bool $international;
-    private string $slug;
+    protected int $id;
+    protected string $city;
+    protected string $year;
+    protected bool $isInternational;
+    protected string $slug;
 
-    public function __construct(string $city, int $month, int $year, string $slug, bool $isInternational = false)
+    protected $comments;
+
+    public function getId() : int
     {
-        $this->city = $city;
-        $this->month = $month;
-        $this->year = $year;
-        $this->slug = $slug;
-        $this->international = $isInternational;
+        return $this->id;
+    }
+
+    public function setId(int $value): self
+    {
+        $this->id = $value;
+
+        return $this;
     }
 
     /**
@@ -33,30 +40,9 @@ class Conference
         return $this->city;
     }
 
-    public function setCity(string $value): Conference
+    public function setCity(string $value): self
     {
         $this->city = $value;
-
-        return $this;
-    }
-
-    /**
-     * Get Conference's Month
-     *
-     * @return integer
-     */
-    public function getMonth(): int
-    {
-        return $this->month;
-    }
-
-    public function setMonth(int $value): Conference
-    {
-        if ($value < 1 || $value > 12) {
-            throw new \InvalidArgumentException("Invalid month [$value]");
-        }
-
-        $this->month = $value;
 
         return $this;
     }
@@ -71,7 +57,7 @@ class Conference
         return $this->year;
     }
 
-    public function setYear(int $value): Conference
+    public function setYear(string $value): self
     {
         if ($value > 9999) {
             throw new \InvalidArgumentException("Invalid year [$value]. Value must be less than 9999.");
@@ -92,7 +78,7 @@ class Conference
         return $this->slug;
     }
 
-    public function setSlug(string $value): Conference
+    public function setSlug(string $value): self
     {
         $this->slug = $value;
 
@@ -106,12 +92,12 @@ class Conference
      */
     public function isInternational(): bool
     {
-        return $this->international;
+        return $this->isInternational;
     }
 
-    public function setInternational(bool $value): Conference
+    public function setInternational(bool $value): self
     {
-        $this->international = $value;
+        $this->isInternational = $value;
 
         return $this;
     }

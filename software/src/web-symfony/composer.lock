@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a24a6b9b93e59e45727d3d70d92ef0a",
+    "content-hash": "ce2fdd6907c481e4a37cf005819b65a8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1695,11 +1695,11 @@
         },
         {
             "name": "php-clean-architecture/application",
-            "version": "1",
+            "version": "1.0",
             "dist": {
                 "type": "path",
                 "url": "../application",
-                "reference": "c18df298fc69126769c96a3a9c571747984b6d94"
+                "reference": "cbca2d462222369e83ab36f858483ae42994716f"
             },
             "require": {
                 "php": ">=8.1"
@@ -1720,6 +1720,37 @@
                 }
             ],
             "description": "Application layer of this Clean Architecture project",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "php-clean-architecture/domain",
+            "version": "1.0",
+            "dist": {
+                "type": "path",
+                "url": "../domain",
+                "reference": "3609da9208248514b697c53fed5815f55cc4e40c"
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCleanArchitecture\\Domain\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rudi Rocha",
+                    "email": "rudi.rocha@gmail.com"
+                }
+            ],
+            "description": "Domain layer of this Clean Architecture project",
             "transport-options": {
                 "relative": true
             }

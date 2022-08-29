@@ -9,11 +9,12 @@ use DateTimeImmutable;
  */
 class Comment
 {
-    private string $author;
-    private string $text;
-    private string $email;
-    private DateTimeImmutable $createdAt;
-    private Conference $conference;
+    protected int $id;
+    protected string $author;
+    protected string $text;
+    protected string $email;
+    protected DateTimeImmutable $createdAt;
+    protected Conference $conference;
 
     public function __construct(string $theAuthor, string $theText, string $theAuthorsEmail, DateTimeImmutable $createdDate = new DateTimeImmutable(), ?Conference $theConference = null)
     {
@@ -28,7 +29,7 @@ class Comment
         return $this->author;
     }
 
-    public function setAuthor(string $value) : Comment
+    public function setAuthor(string $value) : self
     {
         $this->author = $value;
 
@@ -39,7 +40,7 @@ class Comment
         return $this->email;
     }
 
-    public function setEmail(string $value) : Comment
+    public function setEmail(string $value) : self
     {
         $this->email = $value;
 
@@ -50,7 +51,7 @@ class Comment
         return $this->text;
     }
 
-    public function setText(string $value) : Comment
+    public function setText(string $value) : self
     {
         $this->text = $value;
 
@@ -61,7 +62,7 @@ class Comment
         return $this->createdAt;
     }
 
-    public function setCreatedAt(DateTimeImmutable $value) : Comment
+    public function setCreatedAt(DateTimeImmutable $value) : self
     {
         $this->createdAt = $value;
 
@@ -72,7 +73,7 @@ class Comment
         return $this->conference;
     }
 
-    public function setConference(string $value) : Comment
+    public function setConference(string $value) : self
     {
         $this->conference = $value;
 

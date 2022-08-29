@@ -2,7 +2,11 @@
 use \PhpCleanArchitecture\Domain\Entity\Conference;
 
 beforeEach(function() {
-    $this->conference = new Conference('city 1', 1,2022, 'theSlug');
+    $this->conference = new Conference();
+    $this->conference->setCity('city 1');
+    $this->conference->setYear('2022');
+    $this->conference->setSlug('theSlug');
+
 });
 
 it("tests getCity()", function() {
@@ -27,15 +31,6 @@ it('tests setSlug()', function() {
     expect($this->conference->getSlug())->toBe($expectedSlug);
 });
 
-it('tests getMonth()', function () {
-    expect($this->conference->getMonth())->toBe(1);
-});
-
-it('tests setMonth()', function() {
-    $this->conference->setMonth(2);
-    expect($this->conference->getMonth())->toBe(2);
-});
-
 it('tests getYear()', function () {
     expect($this->conference->getYear())->toBe(2022);
 });
@@ -45,6 +40,10 @@ it('tests setYear()', function() {
     expect($this->conference->getYear())->toBe(2023);
 });
 
-it('tests setYear() with Invalid argument', function() {
+it('tests setYear() with Invalid argument:: too High', function() {
     $this->conference->setYear(10000);
 })->throws(InvalidArgumentException::class, 'Invalid year [10000]. Value must be less than 9999.');
+
+it('tests setYear() with Invalid argument:: invalid type', function() {
+    $this->conference->setYear('foo');
+})->throws(InvalidArgumentException::class, 'Invalid year [foo]. Value must be less than 9999.');
