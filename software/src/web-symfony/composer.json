@@ -11,6 +11,7 @@
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
+        "easycorp/easyadmin-bundle": "^4",
         "php-clean-architecture/application": "^1.0",
         "php-clean-architecture/domain": "^1.0",
         "phpdocumentor/reflection-docblock": "^5.3",

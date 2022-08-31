@@ -18,6 +18,11 @@ class Conference
 
     protected $comments;
 
+    public function __toString(): string
+    {
+        return sprintf("%s %s", $this->getCity(), $this->getYear());
+    }
+
     public function getId() : int
     {
         return $this->id;
@@ -52,7 +57,7 @@ class Conference
      *
      * @return integer
      */
-    public function getYear(): int
+    public function getYear(): string
     {
         return $this->year;
     }
@@ -90,12 +95,12 @@ class Conference
      *
      * @return boolean
      */
-    public function isInternational(): bool
+    public function getIsInternational(): bool
     {
         return $this->isInternational;
     }
 
-    public function setInternational(bool $value): self
+    public function setIsInternational(bool $value): self
     {
         $this->isInternational = $value;
 

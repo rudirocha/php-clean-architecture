@@ -25,6 +25,11 @@ class Comment
         $this->conference = $theConference;
     }
 
+    public function __toString(): string
+    {
+        return (string) $this->getEmail();
+    }
+
     public function getAuthor() : string{
         return $this->author;
     }
