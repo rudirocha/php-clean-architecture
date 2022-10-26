@@ -1,1 +1,12 @@
+# IDE folders
+.idea
+.vscode
+
+# Platform files
 platform/docker/.env
+
+# exclude all composer vendor folders 
+software/**/vendor
+
+# exclude phpunit files
+software/**/.phpunit.result.cache
